@@ -1,3 +1,9 @@
 .eachArticle{
     border:2px solid blue;
 }
+
+.jumbotron{
+    background-color:#263159;
+    color:white;
+    text-align:center;
+}
