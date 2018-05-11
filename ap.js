@@ -85,6 +85,4 @@ $('.clearBtn').on("click", function (event) {
     event.preventDefault();
     $('.ordered').empty();
 
-
-
 });
