@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
 
@@ -20,42 +21,49 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4"><i class="far fa-newspaper fa-fw"></i>New York Times Search</h1>
+            <h1 class="display-4">
+                <i class="far fa-newspaper fa-fw ficon"></i>New York Times Search</h1>
         </div>
-<div class="panel panel-info">
-        <div class="panel-heading"><i class="far fa-newspaper fa-fw"></i>Search Parameters</div>
-    <div class="panel-body">
-        
-        <form>
-            <div class="form-group">
-                <label for="searchTerm">Search Term:</label>
-                <input type="text" class="form-control" id="searchTerm" aria-describedby="emailHelp" placeholder="search">
-            </div>
-            <div class="form-group">
-                <label for="numberRecords">Number of Records to Retrieve:</label>
-                <input type="number" min="0" max="10" class="form-control" id="numberOfRecords" placeholder="records">
-            </div>
-            <div class="form-group">
-                <label for="startYear">Start Year(Optional):</label>
-                <input type="date" class="form-control" id="startYear" placeholder="YYYYMMDD">
-            </div>
-            <div class="form-group">
-                <label for="endYear">End Year(optional):</label>
-                <input type="date" class="form-control" id="endYear" placeholder="YYYYMMDD">
-            </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <i class="far fa-newspaper fa-fw ficon"></i>Search Parameters</div>
+            <div class="panel-body">
 
-            <button type="submit" class="btn btn-primary searchBtn"><i class="fas fa-search fa-fw"></i>Search</button>
-            <button type="submit" class="btn btn-primary clearBtn"><i class="far fa-trash-alt fa-fw"></i>Clear</button>
-        </form>
-    </div>
-    </div>
+                <form>
+                    <div class="form-group">
+                        <label for="searchTerm">Search Term:</label>
+                        <input type="text" class="form-control" id="searchTerm" aria-describedby="emailHelp" placeholder="search">
+                    </div>
+                    <div class="form-group">
+                        <label for="numberRecords">Number of Records to Retrieve:</label>
+                        <input type="number" min="0" max="10" class="form-control" id="numberOfRecords" placeholder="records">
+                    </div>
+                    <div class="form-group">
+                        <label for="startYear">Start Year(Optional):</label>
+                        <input type="date" class="form-control" id="startYear" placeholder="YYYYMMDD">
+                    </div>
+                    <div class="form-group">
+                        <label for="endYear">End Year(optional):</label>
+                        <input type="date" class="form-control" id="endYear" placeholder="YYYYMMDD">
+                    </div>
 
-    <div class="panel panel-default">
-            <div class="panel-heading">Top Articles</div>
+                    <button type="submit" class="btn btn-primary searchBtn">
+                        <i class="fas fa-search fa-fw ficon"></i>Search</button>
+                    <button type="submit" class="btn btn-primary clearBtn">
+                        <i class="far fa-trash-alt fa-fw ficon"></i>Clear</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                    <i class="far fa-newspaper fa-fw ficon"></i>Top Articles</div>
             <div class="panel-body articleSection"></div>
             <ol class="ordered">
             </ol>
-    </div>
+        </div>
+
 
     </div>
     <!--main container-->
