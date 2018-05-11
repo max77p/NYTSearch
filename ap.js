@@ -3,15 +3,17 @@
 $('.testBtn').on("click",function(event){
     var search=$('#searchTerm').val();
     var records=$('#numberOfRecords').val();
-    var queryURL="https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=85a9b5f65ee34104ba2b489ac87cb883"+"&q="+search+"?page=0";
+    var startyear=$('#startYear').val();//yyyymmdd
+    var endyear=$('#endYear').val();//yyyymmdd
+
+    var queryURL="https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=85a9b5f65ee34104ba2b489ac87cb883"+"&q="+search+"&begin_date="+startyear+"&end_date="+endyear+"?page=0";
     event.preventDefault();
 
 $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-      
-    console.log(response);
+      console.log(response);
 });
 
 });
