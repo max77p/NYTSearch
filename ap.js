@@ -16,6 +16,12 @@ $('.searchBtn').on("click", function (event) {
         queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=85a9b5f65ee34104ba2b489ac87cb883" + "&q=" + search + "&begin_date=" + startyear + "&end_date=" + endyear;
 
     }
+    else if (search && startyear && !endyear){
+        queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=85a9b5f65ee34104ba2b489ac87cb883" + "&q=" + search + "&begin_date=" + startyear;
+    }
+    else if (search && !startyear && endyear){
+        queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=85a9b5f65ee34104ba2b489ac87cb883" + "&q=" + search +"&end_date=" + endyear;
+    }
     else {
         alert("please input at least search");//tells user to at least put search item
     }
