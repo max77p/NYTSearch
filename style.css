@@ -4,6 +4,7 @@ body{
 
 .eachArticle{
     /*border:2px solid blue;*/
+    padding:1em;
 }
 
 .jumbotron{
@@ -14,4 +15,8 @@ body{
 
 .ficon{
     margin-right:.2em;
+}
+
+.ordered{
+    
 }

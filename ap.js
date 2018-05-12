@@ -40,38 +40,58 @@ $('.searchBtn').on("click", function (event) {
         if (records) {
             docLength = records;
         }
-        else if(!records) {
+        else if (!records) {
             docLength = doc.length;
         }
 
         console.log(records);
         console.log(docLength);
-        //console.log(doc[0]['byline'].original);
+
+        if('pub_date' in doc[0]){
+            console.log("yes");
+        }
+        
 
         for (var i = 0; i < docLength; i++) {
-            var pubdate = (doc[i].pub_date).slice(0, 10);
-            var author = (doc[i]['byline'].original);
+            var pubdate;
+            var pubdateexists;
+            var author;
 
-            var newdiv = $('<div>');
             var li = $('<li>');
-            newdiv.addClass("eachArticle");
-            var p = $('<p>');
+            li.addClass("eachArticle");
 
-            p.text(author);
-            newdiv.append(p);
+            if ('pub_date' in doc[i]) {//check if publication date exists
+                var p = $('<p>');
+                pubdate = (doc[i].pub_date).slice(0, 10);
+                p.text(" Publication Date: " + pubdate);
+                li.append(p);
+            }
+            else {
+                var p = $('<p>');
+                pubdate = "Publication date not available";
+                p.text(pubdate);
+                li.append(p);
+                
+            }
 
-            var p = $('<p>');
-            p.text(" Publication Date: " + pubdate);
-
+            if ('byline' in doc[i]) {//check if author name exists in database
+                var p = $('<p>');
+                author = (doc[i]['byline'].original);
+                p.text(author);
+                li.append(p);
+            }
+            else {
+                var p = $('<p>');
+                author = "Author not available";
+                p.text(author);
+                li.append(p);
+            }
+        
             var a = $('<a>');
             a.attr("href", doc[i].web_url);
             a.text(doc[i].snippet);
 
-            //newdiv.append(p);
-            newdiv.append(p);
-
-            newdiv.append(a);
-            li.append(newdiv);
+            li.append(a);
             $('.ordered').append(li);
         }
 
